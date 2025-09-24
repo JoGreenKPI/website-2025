@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About GreenKPI | Sustainability Practitioners Building Real-World Solutions for Australian Enterprises</title>
+    <meta name="description" content="Learn about GreenKPI's mission to transform sustainability management through action-driven software built by sustainability practitioners for measurable ROI and real-world impact across Australian enterprises and consultancies.">
+    <meta name="keywords" content="sustainability practitioners, environmental management software Australia, ESG platform developers, sustainability consultancy tools, carbon management solutions, enterprise sustainability transformation">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" integrity="sha384-abc123" crossorigin="anonymous">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "GreenKPI",
+        "description": "Enterprise sustainability management platform for measurable environmental impact and ROI",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web-based",
+        "offers": {
+            "@type": "Offer",
+            "category": "Enterprise Software"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Johanna Kloot",
+            "jobTitle": "Founder & CEO"
+        }
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Enhanced GreenKPI Color Palette 2025 - Brand Book Compliant */
+            --primary-green: #1B9D1D;
+            --forest-green: #2D5016;
+            --sage-green: #87A96B;
+            --deep-teal: #4A8B8C;
+            --terracotta: #C4704E;
+            --bright-yellow: #FACC15;
+            --pure-white: #FFFFFF;
+            --cream: #F7E8D3;
+            --soft-grey: #F5F5F5;
+            --deep-black: #060606;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--deep-black);
+            background: var(--pure-white);
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 87.5rem;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Skip Navigation for Accessibility */
+        .skip-nav {
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            background: var(--forest-green);
+            color: var(--pure-white);
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            z-index: 9999;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        .skip-nav:focus {
+            top: 6px;
+            left: 6px;
+            opacity: 1;
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+
+        /* Professional Navigation - Semantic */
+        nav.nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(1.25rem);
+            border-bottom: 1px solid rgba(45, 80, 22, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            letter-spacing: -0.03125rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: var(--forest-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.0625rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus,
+        .nav-links a.active {
+            color: var(--primary-green);
+            outline: none;
+        }
+
+        .nav-links a:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -0.375rem;
+            left: 0;
+            width: 0;
+            height: 0.125rem;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after,
+        .nav-links a:focus::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--deep-teal) 100%);
+            color: var(--pure-white);
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0.25rem 0.75rem rgba(27, 157, 29, 0.25);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-cta:hover,
+        .nav-cta:focus {
+            transform: translateY(-0.125rem);
+            box-shadow: 0 0.5rem 1.5625rem rgba(27, 157, 29, 0.35);
+            outline: none;
+        }
+
+        .nav-cta:focus {
+            outline: 2px solid var(--pure-white);
+            outline-offset: 2px;
+        }
+
+        /* Hero Section - Enhanced Layout */
+        header.hero {
+            background: linear-gradient(135deg, var(--pure-white) 0%, var(--cream) 100%);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(45,80,22,0.06)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-grid)"/></svg>') repeat;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 35rem;
+        }
+
+        .hero-badge {
+            background: rgba(45, 80, 22, 0.1);
+            border: 1px solid rgba(45, 80, 22, 0.2);
+            color: var(--forest-green);
+            padding: 0.5rem 1.25rem;
+            border-radius: 3.125rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03125rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .hero h1 {
+            font-size: 3.75rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.0625rem;
+            color: var(--deep-black);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 3rem;
+            color: var(--deep-black);
+            line-height: 1.5;
+            font-weight: 400;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: var(--forest-green);
+            text-transform: uppercase;
+            letter-spacing: 0.0625rem;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .hero-visual {
+            background: var(--pure-white);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            position: relative;
+        }
+
+        .hero-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0.375rem;
+            background: linear-gradient(90deg, var(--primary-green), var(--bright-yellow), var(--deep-teal));
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+
+        .mission-preview {
+            text-align: center;
+        }
+
+        .mission-icon {
+            width: 6rem;
+            height: 6rem;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0.75rem 2rem rgba(45, 80, 22, 0.3);
+        }
+
+        .mission-preview h2 {
+            font-size: 1.5rem;
+            color: var(--deep-black);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .mission-preview p {
+            color: var(--deep-black);
+            opacity: 0.8;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Story Section */
+        section.story-section {
+            padding: 6rem 0;
+            background: var(--soft-grey);
+        }
+
+        .story-content {
+            max-width: 50rem;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-badge {
+            background: rgba(45, 80, 22, 0.1);
+            color: var(--forest-green);
+            padding: 0.375rem 1rem;
+            border-radius: 3.125rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03125rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            color: var(--deep-black);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03125rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .story-text {
+            font-size: 1.25rem;
+            color: var(--deep-black);
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .story-quote {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 1rem;
+            border-left: 0.375rem solid var(--primary-green);
+            margin: 3rem 0;
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.05);
+        }
+
+        .story-quote blockquote {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.4;
+        }
+
+        .story-quote cite {
+            font-size: 1rem;
+            color: var(--deep-black);
+            font-weight: 600;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 0.03125rem;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        /* Values Section */
+        section.values-section {
+            padding: 6rem 0;
+            background: var(--pure-white);
+        }
+
+        .values-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            max-width: 50rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 3rem;
+        }
+
+        .value-card {
+            background: var(--cream);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(45, 80, 22, 0.1);
+        }
+
+        .value-card:hover,
+        .value-card:focus-within {
+            transform: translateY(-0.75rem);
+            box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+            background: var(--pure-white);
+        }
+
+        .value-icon {
+            width: 5rem;
+            height: 5rem;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 0.75rem 2rem rgba(45, 80, 22, 0.25);
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            color: var(--deep-black);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .value-description {
+            color: var(--deep-black);
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Team Section */
+        section.team-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--soft-grey) 0%, var(--cream) 100%);
+        }
+
+        .team-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .team-text h2 {
+            font-size: 3rem;
+            color: var(--deep-black);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .team-text p {
+            color: var(--deep-black);
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .founder-highlight {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border-left: 0.375rem solid var(--terracotta);
+            margin: 2rem 0;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+        }
+
+        .founder-highlight p {
+            font-size: 1.125rem;
+            color: var(--forest-green);
+            font-style: italic;
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .founder-card {
+            background: var(--pure-white);
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .founder-image {
+            width: 10rem;
+            height: 10rem;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%);
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pure-white);
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            box-shadow: 0 0.75rem 2rem rgba(45, 80, 22, 0.3);
+        }
+
+        .founder-details h3 {
+            font-size: 1.75rem;
+            color: var(--deep-black);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .founder-role {
+            font-size: 1.125rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .founder-bio {
+            font-size: 0.875rem;
+            color: var(--deep-black);
+            opacity: 0.8;
+            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* CTA Section - Clean Professional Design */
+        section.cta-section {
+            background: var(--pure-white);
+            color: var(--deep-black);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(45, 80, 22, 0.15);
+            box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.08);
+            margin: 2rem 0;
+            border-radius: 1rem;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(27, 157, 29, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(74, 139, 140, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            font-family: 'Inter', sans-serif;
+            color: var(--deep-black);
+        }
+
+        .cta-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            color: var(--deep-black);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 0.125rem solid transparent;
+            min-width: 12rem;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn:focus {
+            outline: 0.1875rem solid var(--primary-green);
+            outline-offset: 0.125rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--deep-teal) 100%);
+            color: var(--pure-white);
+            border-color: var(--primary-green);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: translateY(-0.1875rem);
+            box-shadow: 0 0.75rem 2.5rem rgba(27, 157, 29, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--forest-green);
+            border-color: var(--forest-green);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: var(--forest-green);
+            color: var(--pure-white);
+            transform: translateY(-0.1875rem);
+        }
+
+        /* Footer - Semantic Structure */
+        footer.footer {
+            background: var(--deep-black);
+            color: var(--cream);
+            padding: 5rem 0 2.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h2 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-brand p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-section h3 {
+            color: var(--pure-white);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--cream);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-section ul li a:hover,
+        .footer-section ul li a:focus {
+            color: var(--primary-green);
+            outline: none;
+        }
+
+        .footer-section ul li a:focus {
+            outline: 2px solid var(--primary-green);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(45, 80, 22, 0.3);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom p {
+            opacity: 0.7;
+            font-size: 0.875rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 64rem) {
+            .hero-content,
+            .team-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .section-title,
+            .cta-title {
+                font-size: 2.5rem;
+            }
+
+            .team-text h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 48rem) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero,
+            .story-section,
+            .values-section,
+            .team-section,
+            .cta-section {
+                padding: 4rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .section-title,
+            .cta-title {
+                font-size: 1.75rem;
+            }
+
+            .team-text h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 20rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 48rem) {
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+        }
+
+        @media (min-width: 64rem) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            button:focus,
+            a:focus,
+            input:focus,
+            select:focus,
+            textarea:focus {
+                outline: 3px solid var(--primary-green);
+                outline-offset: 3px;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+
+    <!-- Semantic Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo-container">
+                    <div class="logo" role="img" aria-label="GreenKPI Logo">GREENKPI</div>
+                    <div class="logo-tagline">Sustainability in Action</div>
+                </div>
+                <ul class="nav-links" role="menubar" aria-label="Main navigation menu">
+                    <li role="none"><a href="#solutions" role="menuitem">Solutions</a></li>
+                    <li role="none"><a href="#software" role="menuitem">Software</a></li>
+                    <li role="none"><a href="#pricing" role="menuitem">Pricing</a></li>
+                    <li role="none"><a href="#resources" role="menuitem">Resources</a></li>
+                    <li role="none"><a href="#about" class="active" role="menuitem" aria-current="page">About</a></li>
+                </ul>
+                <a href="#demo" class="nav-cta" aria-label="Request Demo - Opens demo request section">Request Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <header class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="hero-badge">Built by Sustainability Professionals</div>
+                        <h1 id="hero-heading">The Missing Tool in the Sustainability Toolbox</h1>
+                        <p class="hero-subtitle">Founded by sustainability practitioners who understand the real challenges of driving measurable environmental and social change at scale across Australian enterprises and consultancies.</p>
+                        
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <div class="hero-stat-number">10+</div>
+                                <div class="hero-stat-label">Years Industry Experience</div>
+                            </div>
+                            <div class="hero-stat">
+                                <div class="hero-stat-number">500+</div>
+                                <div class="hero-stat-label">Sustainability Actions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <aside class="hero-visual">
+                        <div class="mission-preview">
+                            <div class="mission-icon" aria-hidden="true">
+                                <svg width="48" height="48" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                    <circle cx="50" cy="30" r="15" fill="white"/>
+                                    <circle cx="30" cy="65" r="12" fill="white" opacity="0.8"/>
+                                    <circle cx="70" cy="65" r="12" fill="white" opacity="0.8"/>
+                                    <path d="M50 45 L30 53 M50 45 L70 53" stroke="white" stroke-width="3"/>
+                                    <circle cx="50" cy="50" r="35" stroke="white" stroke-width="2" fill="none" opacity="0.3"/>
+                                </svg>
+                            </div>
+                            <h2>Our Mission</h2>
+                            <p>To bridge the gap between sustainability aspirations and measurable action through practical, user-friendly technology built for real-world impact.</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </header>
+
+        <!-- Story Section -->
+        <section class="story-section" aria-labelledby="story-heading">
+            <div class="container">
+                <div class="story-content">
+                    <div class="section-badge">Our Journey</div>
+                    <h2 id="story-heading" class="section-title">From Challenge to Solution</h2>
+                    <p class="story-text">In a world of rapid environmental change, where climate issues are leading to social and economic challenges, we believe every action—no matter how small—can drive meaningful change that reduces risk and creates lasting impact.</p>
+                    
+                    <aside class="story-quote">
+                        <blockquote>"An equitable, clean, green and transparent global supply chain supported by a circular economy."</blockquote>
+                        <cite>— GreenKPI Vision Statement</cite>
+                    </aside>
+                    
+                    <p class="story-text">Our journey began with a simple yet profound realisation: sustainable societies and economies depend on a healthy environment. But there was a missing tool—a bridge between sustainability commitments and measurable action that organisations of all sizes could actually use and succeed with.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section" aria-labelledby="values-heading">
+            <div class="container">
+                <header class="values-header">
+                    <div class="section-badge">Our Values</div>
+                    <h2 id="values-heading" class="section-title">What Drives Us Forward</h2>
+                    <p class="story-text">Built by practitioners, for practitioners—we understand the real challenges of sustainability management and design solutions that actually work in the real world.</p>
+                </header>
+
+                <div class="values-grid">
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                <path d="M20 50L40 70L80 30" stroke="white" stroke-width="6" fill="none"/>
+                                <circle cx="50" cy="50" r="40" stroke="white" stroke-width="4" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Action-Oriented</h3>
+                        <p class="value-description">We focus on practical solutions that drive real change. Every feature is designed to turn sustainability commitments into measurable actions that deliver results.</p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                <circle cx="30" cy="30" r="12" fill="white"/>
+                                <circle cx="70" cy="30" r="12" fill="white"/>
+                                <circle cx="50" cy="70" r="12" fill="white"/>
+                                <line x1="30" y1="30" x2="70" y2="30" stroke="white" stroke-width="4"/>
+                                <line x1="42" y1="42" x2="58" y2="58" stroke="white" stroke-width="4"/>
+                                <line x1="58" y1="42" x2="42" y2="58" stroke="white" stroke-width="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Collaboration First</h3>
+                        <p class="value-description">Sustainability is a team effort. We build tools that empower every employee to contribute, from C-suite executives to frontline staff members.</p>
+                    </article>
+
+                    <article class="value-card">
+                        <div class="value-icon" aria-hidden="true">
+                            <svg width="32" height="32" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                                <rect x="20" y="40" width="12" height="40" fill="white"/>
+                                <rect x="44" y="25" width="12" height="55" fill="white"/>
+                                <rect x="68" y="35" width="12" height="45" fill="white"/>
+                                <path d="M15 85 L85 85" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </div>
+                        <h3 class="value-title">Measurable Impact</h3>
+                        <p class="value-description">Progress without measurement is just activity. We ensure every sustainability action can be tracked, reported, and celebrated with stakeholders.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="team-content">
+                    <article class="team-text">
+                        <div class="section-badge">Leadership</div>
+                        <h2 id="team-heading">Meet Our Founder</h2>
+                        <p>After completing her degree in sustainability with a business major, Johanna engaged with companies to understand the barriers they experienced in their transition to sustainability.</p>
+                        
+                        <p>This research, combined with her own experience as a sustainability consultant, revealed a critical gap: traditional sustainability management tools were either too complex for smaller organisations or too rigid for the dynamic nature of sustainability work.</p>
+                        
+                        <aside class="founder-highlight">
+                            <p>"The day I met my 2-day-old nephew was the day I focused on being part of the solution. That change will be my report card to the baby who grew to be a man in a troubled world."</p>
+                        </aside>
+                        
+                        <p>This personal commitment drives everything we do at GreenKPI. It's not just about building software—it's about creating tools that enable organisations to write their own chapters of environmental stewardship.</p>
+                    </article>
+
+                    <aside class="founder-card">
+                        <div class="founder-image" aria-label="Johanna Kloot, Founder and CEO">JK</div>
+                        <div class="founder-details">
+                            <h3>Johanna Kloot</h3>
+                            <div class="founder-role">Founder & CEO</div>
+                            <div class="founder-bio">
+                                Bachelor of Sustainability (Business Major)<br>
+                                Sustainability Consultant & Environmental Advocate<br>
+                                Dedicated to bridging the gap between sustainability aspirations and measurable action
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section" id="demo" aria-labelledby="cta-heading">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 id="cta-heading" class="cta-title">Join Us in Writing a New Chapter</h2>
+                    <p class="cta-subtitle">The story of our planet's future is still being written. At GreenKPI, we're providing the tools for organisations to write their own chapters of action, resilience, and positive change.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="/demo" class="btn btn-primary" aria-label="Request a personalised demonstration of GreenKPI">
+                            Request Demo
+                            <span aria-hidden="true">→</span>
+                        </a>
+                        <a href="/contact" class="btn btn-secondary" aria-label="Contact GreenKPI team">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-brand">
+                    <h2>GREENKPI</h2>
+                    <p>Enterprise sustainability management platform designed by sustainability practitioners for measurable business results. Empowering organisations to bridge the gap between sustainability commitments and real-world action.</p>
+                </section>
+                <section class="footer-section">
+                    <h3>Solutions</h3>
+                    <nav aria-label="Solutions links">
+                        <ul>
+                            <li><a href="/organisation-sales">Enterprise Organisations</a></li>
+                            <li><a href="/consultancy-sales">Sustainability Consultancies</a></li>
+                            <li><a href="/consultant-registration">Consultant Registration</a></li>
+                            <li><a href="/software">Platform Features</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Company</h3>
+                    <nav aria-label="Company links">
+                        <ul>
+                            <li><a href="/about">About GreenKPI</a></li>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/news">News & Updates</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Resources</h3>
+                    <nav aria-label="Resources links">
+                        <ul>
+                            <li><a href="/help">Help Centre</a></li>
+                            <li><a href="/training">Platform Training</a></li>
+                            <li><a href="/sustainability-library">Sustainability Library</a></li>
+                            <li><a href="/case-studies">Case Studies</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenKPI. All rights reserved.</p>
+                <p>Building sustainable futures through measurable action</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced interactions and accessibility features
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Focus management for skip links
+                        if (this.classList.contains('skip-nav')) {
+                            target.setAttribute('tabindex', '-1');
+                            target.focus();
+                        }
+                    }
+                });
+            });
+
+            // Enhanced navigation scroll effect
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.borderBottom = '1px solid rgba(45, 80, 22, 0.2)';
+                    nav.style.boxShadow = '0 0.25rem 1rem rgba(0, 0, 0, 0.08)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                    nav.style.borderBottom = '1px solid rgba(45, 80, 22, 0.1)';
+                    nav.style.boxShadow = 'none';
+                }
+            });
+
+            // Intersection Observer for smooth animations (respecting reduced motion)
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!prefersReducedMotion) {
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe elements for entrance animations
+                document.querySelectorAll('.value-card, .hero-visual, .founder-card, .story-quote').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(1.875rem)';
+                    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    observer.observe(el);
+                });
+
+                // Staggered animation for value cards
+                const valueCards = document.querySelectorAll('.value-card');
+                valueCards.forEach((card, index) => {
+                    card.style.transitionDelay = `${index * 0.2}s`;
+                });
+            }
+
+            // Enhanced button hover effects
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    if (!prefersReducedMotion) {
+                        this.style.transform = 'translateY(-0.1875rem)';
+                    }
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    if (!prefersReducedMotion) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+
+                // Enhanced keyboard navigation
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+
+            // Dynamic founder image interaction
+            const founderImage = document.querySelector('.founder-image');
+            if (founderImage && !prefersReducedMotion) {
+                founderImage.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotate(5deg)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                founderImage.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            }
+
+            // Mission icon rotation on hover
+            const missionIcon = document.querySelector('.mission-icon');
+            if (missionIcon && !prefersReducedMotion) {
+                missionIcon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'rotate(10deg) scale(1.1)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                missionIcon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'rotate(0deg) scale(1)';
+                });
+            }
+
+            // Enhanced focus management with announcement
+            document.addEventListener('keydown', function(e) {
+                // Escape key to close any focused overlays
+                if (e.key === 'Escape') {
+                    document.activeElement.blur();
+                }
+
+                // Alt + 1 to skip to main content
+                if (e.altKey && e.key === '1') {
+                    e.preventDefault();
+                    const mainContent = document.getElementById('main-content');
+                    if (mainContent) {
+                        mainContent.focus();
+                        mainContent.setAttribute('tabindex', '-1');
+                    }
+                }
+            });
+
+            // Performance optimization: Lazy load background images
+            if ('IntersectionObserver' in window) {
+                const lazyBackgrounds = document.querySelectorAll('.hero, .team-section');
+                
+                const backgroundObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.backgroundImage = entry.target.dataset.background || '';
+                            backgroundObserver.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                lazyBackgrounds.forEach(bg => backgroundObserver.observe(bg));
+            }
+        });
+    </script>
+</body>
+</html>
