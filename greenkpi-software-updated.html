@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenKPI Software Platform | Enterprise Sustainability Management System</title>
+    <meta name="description" content="Project management software for sustainability teams. Track actions, capture metrics, generate reports. Enterprise-grade platform designed by sustainability practitioners for measurable ROI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1B9D1D;
+            --forest-green: #2D5016;
+            --sage-green: #87A96B;
+            --deep-teal: #4A8B8C;
+            --terracotta: #C4704E;
+            --bright-yellow: #FACC15;
+            --pure-white: #FFFFFF;
+            --warm-cream: #FAF7F0;
+            --light-neutral: #FAFAFA;
+            --soft-grey: #F5F5F5;
+            --deep-black: #060606;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 100%; scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.7; 
+            color: var(--deep-black); 
+            background: var(--pure-white); 
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Skip Navigation */
+        .skip-link { 
+            position: absolute; 
+            top: -100px; 
+            left: -100px; 
+            background: var(--deep-black); 
+            color: var(--pure-white); 
+            padding: 8px 16px; 
+            text-decoration: none; 
+            z-index: 1001; 
+            border-radius: 4px; 
+            opacity: 0; 
+        }
+        .skip-link:focus { 
+            top: 6px; 
+            left: 6px; 
+            opacity: 1; 
+            outline: 3px solid var(--primary-green);
+            outline-offset: 2px;
+        }
+
+        /* Navigation - Clean white */
+        .nav {
+            background: var(--pure-white);
+            border-bottom: 1px solid var(--soft-grey);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(6, 6, 6, 0.04);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            letter-spacing: -0.5px; 
+        }
+        .logo-green { color: var(--primary-green); }
+        .logo-black { color: var(--deep-black); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--forest-green);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--primary-green); }
+
+        .nav-cta {
+            background: var(--primary-green);
+            color: var(--pure-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(27, 157, 29, 0.3);
+        }
+
+        /* Hero - White with subtle cream */
+        .software-hero {
+            background: var(--pure-white);
+            padding: 6rem 0 5rem;
+            position: relative;
+        }
+
+        .software-hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(to bottom, transparent, var(--warm-cream));
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: rgba(45, 80, 22, 0.08);
+            border: 1px solid rgba(45, 80, 22, 0.15);
+            color: var(--forest-green);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .software-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            color: var(--forest-green);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--deep-black);
+            line-height: 1.7;
+        }
+
+        .version-info {
+            background: var(--light-neutral);
+            border: 1px solid var(--soft-grey);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 3rem;
+            display: inline-block;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .version-info .version {
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            font-family: 'DM Sans', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .version-info .release-note {
+            font-size: 0.875rem;
+            color: var(--deep-black);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons - Solid colors only */
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: var(--pure-white);
+            box-shadow: 0 4px 12px rgba(27, 157, 29, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(27, 157, 29, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--pure-white);
+            color: var(--forest-green);
+            border: 2px solid var(--forest-green);
+        }
+
+        .btn-secondary:hover {
+            background: var(--forest-green);
+            color: var(--pure-white);
+        }
+
+        /* Platform Features - Light neutral */
+        .platform-features {
+            padding: 6rem 0;
+            background: var(--light-neutral);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-badge {
+            background: rgba(45, 80, 22, 0.08);
+            color: var(--forest-green);
+            padding: 0.375rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--deep-black);
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Feature Cards - White with subtle shadows */
+        .feature-card {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(6, 6, 6, 0.08);
+            border: 1px solid var(--soft-grey);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 8px 24px rgba(6, 6, 6, 0.12);
+        }
+
+        .feature-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--soft-grey);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            color: var(--forest-green);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .feature-type {
+            font-size: 0.8125rem;
+            color: var(--deep-teal);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .feature-description {
+            color: var(--deep-black);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            color: var(--deep-black);
+            font-size: 0.9375rem;
+            border-bottom: 1px solid var(--soft-grey);
+            position: relative;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.125rem;
+            width: 6px;
+            height: 6px;
+            background: var(--primary-green);
+            border-radius: 50%;
+        }
+
+        /* Platform Demo - Warm cream section */
+        .platform-demo {
+            padding: 6rem 0;
+            background: var(--warm-cream);
+        }
+
+        .demo-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .demo-text h2 {
+            font-size: 2rem;
+            color: var(--forest-green);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .demo-text p {
+            color: var(--deep-black);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .demo-metrics {
+            background: var(--pure-white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--soft-grey);
+        }
+
+        .demo-metrics h3 {
+            color: var(--forest-green);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 0.25rem;
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--forest-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .demo-visual {
+            background: var(--pure-white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(6, 6, 6, 0.04);
+            border: 1px solid var(--soft-grey);
+        }
+
+        .platform-preview {
+            background: var(--light-neutral);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            color: var(--forest-green);
+            font-size: 0.875rem;
+            font-family: 'Courier New', monospace;
+            border: 2px dashed rgba(45, 80, 22, 0.3);
+            min-height: 20rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        /* Interactive Features - White background */
+        .interactive-features {
+            padding: 6rem 0;
+            background: var(--pure-white);
+        }
+
+        .interactive-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            background: var(--soft-grey);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: var(--forest-green);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-button:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .tab-button.active {
+            background: var(--pure-white);
+            color: var(--primary-green);
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(6, 6, 6, 0.08);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .feature-showcase {
+            background: var(--light-neutral);
+            border-radius: 0.5rem;
+            padding: 3rem;
+            border: 1px solid var(--soft-grey);
+        }
+
+        .showcase-content {
+            background: var(--pure-white);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(6, 6, 6, 0.04);
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            color: var(--deep-black);
+            line-height: 1.6;
+            border: 1px solid var(--soft-grey);
+        }
+
+        .showcase-content h4 {
+            color: var(--forest-green);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* CTA Section - White with subtle accents */
+        .software-cta {
+            background: var(--pure-white);
+            padding: 6rem 0;
+            text-align: center;
+            border-top: 1px solid var(--soft-grey);
+            border-bottom: 1px solid var(--soft-grey);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--forest-green);
+        }
+
+        .cta-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            color: var(--deep-black);
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer - Deep black */
+        .footer {
+            background: var(--deep-black);
+            color: var(--light-neutral);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .footer-brand h3 .logo-green { color: var(--primary-green); }
+        .footer-brand h3 .logo-black { color: var(--light-neutral); }
+
+        .footer-brand p {
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.9375rem;
+        }
+
+        .footer-section h3 {
+            color: var(--pure-white);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--light-neutral);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.875rem;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            font-size: 0.875rem;
+            color: var(--light-neutral);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .demo-content {
+                grid-template-columns: 1fr;
+            }
+            .software-hero h1 {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.5rem; }
+            .nav-links { display: none; }
+            .software-hero {
+                padding: 4rem 0 3rem;
+            }
+            .software-hero h1 {
+                font-size: 2rem;
+            }
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .interactive-tabs {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav class="nav" role="navigation">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <span class="logo-green">GREEN</span><span class="logo-black">KPI</span>
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="greenkpi_about.html">About</a></li>
+                        <li><a href="greenkpi_consultancy.html">Consultancy</a></li>
+                        <li><a href="greenkpi_enterprise.html">Enterprise</a></li>
+                        <li><a href="greenkpi_software.html" class="active">Software</a></li>
+                        <li><a href="greenkpi_pricing.html">Pricing</a></li>
+                    </ul>
+                    <a href="#demo" class="nav-cta">Request Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="software-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Software Platform</div>
+                    <h1>Project Management for Sustainability</h1>
+                    <p class="hero-subtitle">Empower teams to drive measurable change with actions, metrics, and reporting designed for real-world sustainability management</p>
+                    
+                    <div class="version-info">
+                        <div class="version">Version 3.2 - Latest Release</div>
+                        <div class="release-note">Enhanced multi-location management with automated OCR data capture and improved action workflows</div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#demo" class="btn btn-primary">Start Free Trial →</a>
+                        <a href="#features" class="btn btn-secondary">Explore Features</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-features" id="features">
+            <div class="container">
+                <header class="section-header">
+                    <div class="section-badge">Core Platform</div>
+                    <h2 class="section-title">Designed by Sustainability Practitioners</h2>
+                    <p class="section-subtitle">GreenKPI's software platform addresses the real challenges of sustainability management with tools built from industry experience and proven methodologies</p>
+                </header>
+
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <header class="feature-header">
+                            <h3 class="feature-title">Action Management</h3>
+                            <div class="feature-type">Project Workflows</div>
+                        </header>
+                        
+                        <p class="feature-description">Deploy hundreds of pre-loaded sustainability actions or create custom ones. Staff can submit ideas and manage consultancy recommendations with full project management workflows.</p>
+                        
+                        <ul class="feature-list">
+                            <li>400+ pre-loaded sustainability actions</li>
+                            <li>Custom action creation and templates</li>
+                            <li>Staff idea submission and approval</li>
+                            <li>Assignment delegation across teams</li>
+                            <li>Progress tracking with photo evidence</li>
+                            <li>Automated completion verification</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card">
+                        <header class="feature-header">
+                            <h3 class="feature-title">Smart Metrics</h3>
+                            <div class="feature-type">Data Capture</div>
+                        </header>
+                        
+                        <p class="feature-description">Automatically capture sustainability metrics from billing data, manual entry, Excel uploads, or OCR scanning. Track resource usage and efficiency gains in real-time.</p>
+                        
+                        <ul class="feature-list">
+                            <li>Automated billing data integration</li>
+                            <li>OCR document scanning for invoices</li>
+                            <li>Excel bulk data upload capabilities</li>
+                            <li>Real-time dashboard monitoring</li>
+                            <li>Multi-location performance tracking</li>
+                            <li>ROI calculation and cost savings</li>
+                        </ul>
+                    </article>
+
+                    <article class="feature-card">
+                        <header class="feature-header">
+                            <h3 class="feature-title">Live Reporting</h3>
+                            <div class="feature-type">Automated Generation</div>
+                        </header>
+                        
+                        <p class="feature-description">Generate unlimited reports in seconds. From company-wide sustainability reports to single-action analysis. All reports are live, interactive, and shareable.</p>
+                        
+                        <ul class="feature-list">
+                            <li>Unlimited report generation in seconds</li>
+                            <li>Live updates with every action completed</li>
+                            <li>Interactive drill-down capabilities</li>
+                            <li>Stakeholder-specific customisation</li>
+                            <li>Website embedding and social sharing</li>
+                            <li>Macro to micro reporting flexibility</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-demo">
+            <div class="container">
+                <div class="demo-content">
+                    <article class="demo-text">
+                        <div class="section-badge">Live Platform</div>
+                        <h2>See How Teams Use GreenKPI Daily</h2>
+                        <p>Experience the platform that transforms sustainability from administrative overhead into streamlined, measurable action. Built by sustainability practitioners who understand the real challenges of implementation.</p>
+                        
+                        <aside class="demo-metrics">
+                            <h3>Platform Performance</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value">10-25%</div>
+                                    <div class="metric-label">Time Savings</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">3.2s</div>
+                                    <div class="metric-label">Report Generation</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">400+</div>
+                                    <div class="metric-label">Action Library</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">Real-time</div>
+                                    <div class="metric-label">Data Updates</div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <a href="#demo" class="btn btn-primary">Request Live Demo →</a>
+                    </article>
+
+                    <aside class="demo-visual">
+                        <div class="platform-preview">
+Dashboard Overview:
+• Actions Completed: 1,247
+• Active Projects: 23
+• Monthly Savings: $8,240 AUD
+• Team Engagement: 94%
+
+Recent Actions:
+✓ LED Lighting Upgrade - Level 3
+✓ Waste Audit - Melbourne Office
+→ Energy Monitoring - Production
+→ Staff Training - Sustainability
+
+[Live Metrics Dashboard]
+[Action Assignment Portal]
+[Report Generation Interface]
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-features">
+            <div class="container">
+                <header class="section-header">
+                    <div class="section-badge">Platform Modules</div>
+                    <h2 class="section-title">Explore Platform Capabilities</h2>
+                    <p class="section-subtitle">Click through different areas of the GreenKPI platform to see detailed functionality</p>
+                </header>
+
+                <div class="interactive-tabs" role="tablist">
+                    <button class="tab-button active" data-tab="actions" role="tab">Action Library</button>
+                    <button class="tab-button" data-tab="metrics" role="tab">Metrics Capture</button>
+                    <button class="tab-button" data-tab="reports" role="tab">Live Reports</button>
+                    <button class="tab-button" data-tab="workflow" role="tab">Workflow</button>
+                </div>
+
+                <div class="tab-content active" id="actions-tab" role="tabpanel">
+                    <article class="feature-showcase">
+                        <h3 style="color: var(--forest-green); margin-bottom: 1.5rem; font-size: 1.25rem; text-align: center;">Action Management System</h3>
+                        <div class="showcase-content">
+ENERGY MANAGEMENT (127 actions)
+├── LED Lighting Upgrades
+├── HVAC Optimisation  
+├── Equipment Scheduling
+├── Solar Panel Assessment
+└── Energy Monitoring Systems
+
+WASTE REDUCTION (89 actions)
+├── Recycling Programs
+├── Composting Systems
+├── Packaging Reduction
+├── Supplier Partnerships
+└── Circular Economy Initiatives
+
+CUSTOM ACTIONS (23 created)
+├── Staff Ideas: "Green Commute Program"
+├── Consultant Rec: "Rainwater Harvesting"
+├── Training Outcome: "Eco Office Setup"
+└── Innovation: "Carbon Offset Garden"
+
+ACTION ASSIGNMENT WORKFLOW:
+1. Browse library or create custom
+2. Assign to team/location/individual
+3. Set deadline and requirements
+4. Track progress with updates
+5. Verify completion with evidence
+                        </div>
+                        <p style="color: var(--deep-black); text-align: center; margin-top: 1rem;">Comprehensive action management with project workflows and progress tracking</p>
+                    </article>
+                </div>
+
+                <div class="tab-content" id="metrics-tab" role="tabpanel">
+                    <article class="feature-showcase">
+                        <h3 style="color: var(--forest-green); margin-bottom: 1.5rem; font-size: 1.25rem; text-align: center;">Smart Metrics Capture</h3>
+                        <div class="showcase-content">
+DATA SOURCES CONNECTED:
+✓ Electricity Bills (Auto-import via API)
+✓ Water Usage (Smart meter integration)
+✓ Gas Consumption (Monthly upload)
+✓ Waste Management (Manual + OCR)
+✓ Transport Logs (Excel bulk upload)
+
+RECENT OCR SCANS:
+• Energy Australia Invoice - March 2025
+• Sydney Water Statement - Q1 2025  
+• Cleanaway Waste Bill - 15/03/25
+• Fleet Fuel Receipts - Weekly batch
+
+METRICS DASHBOARD:
+Energy: 2,847 kWh (↓12% vs last month)
+Water: 1,240 L (↓6% efficiency gain)
+Waste: 340 kg (↑15% recycling rate)
+Costs: $4,230 saved (↑127% ROI)
+
+AUTOMATED CALCULATIONS:
+• Carbon footprint tracking
+• Cost savings analysis  
+• Efficiency trend analysis
+• Benchmark comparisons
+                        </div>
+                        <p style="color: var(--deep-black); text-align: center; margin-top: 1rem;">Flexible data capture from multiple sources with automated ROI calculations</p>
+                    </article>
+                </div>
+
+                <div class="tab-content" id="reports-tab" role="tabpanel">
+                    <article class="feature-showcase">
+                        <h3 style="color: var(--forest-green); margin-bottom: 1.5rem; font-size: 1.25rem; text-align: center;">Live Reporting Engine</h3>
+                        <div class="showcase-content">
+REPORT TYPES AVAILABLE:
+├── Executive Dashboard (Board meetings)
+├── Stakeholder Updates (Quarterly)  
+├── Project ROI Analysis (Internal)
+├── Public Transparency (Website embed)
+├── Social Media Highlights (Marketing)
+└── Compliance Reports (Regulatory)
+
+INTERACTIVE FEATURES:
+• Drill-down by location/timeframe/topic
+• Live data updates every action completion
+• Shareable URLs for stakeholder access
+• Website embedding code generation
+• Export to PDF/Excel/PowerPoint
+
+GENERATION EXAMPLES:
+→ Melbourne Office Q1 Report: 2.1 seconds
+→ Company-wide Sustainability: 3.7 seconds  
+→ Energy Project ROI Analysis: 1.8 seconds
+→ Public Transparency Report: 2.9 seconds
+
+SHARING OPTIONS:
+• Direct stakeholder email links
+• Website embed codes
+• Social media ready graphics
+• PDF downloads for offline use
+                        </div>
+                        <p style="color: var(--deep-black); text-align: center; margin-top: 1rem;">Generate unlimited reports in seconds, all live-updating and shareable</p>
+                    </article>
+                </div>
+
+                <div class="tab-content" id="workflow-tab" role="tabpanel">
+                    <article class="feature-showcase">
+                        <h3 style="color: var(--forest-green); margin-bottom: 1.5rem; font-size: 1.25rem; text-align: center;">Implementation Workflow</h3>
+                        <div class="showcase-content">
+SETUP PHASE (Week 1-2):
+1. Account configuration and branding
+2. Location setup and team assignment  
+3. Initial data import and integration
+4. Staff training and onboarding sessions
+
+DEPLOYMENT PHASE (Week 3-4):
+1. Action library exploration and selection
+2. Custom action creation for specific needs
+3. Assignment delegation across teams
+4. Baseline metrics establishment
+
+EXECUTION PHASE (Ongoing):
+1. Daily action progress updates
+2. Weekly metrics capture and review
+3. Monthly progress reporting
+4. Quarterly strategy adjustments
+
+TYPICAL USER JOURNEY:
+Morning: Check dashboard for updates
+→ Review assigned actions
+→ Update progress with photos/notes
+→ Submit new ideas or observations
+
+Weekly: Metrics review meeting
+→ Generate progress reports  
+→ Assign new actions based on results
+→ Celebrate completed milestones
+                        </div>
+                        <p style="color: var(--deep-black); text-align: center; margin-top: 1rem;">Structured implementation approach with ongoing support and training</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="software-cta" id="demo">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Transform Your Sustainability Management?</h2>
+                    <p class="cta-subtitle">Join leading organisations using GreenKPI to turn sustainability commitments into measurable results with proven ROI</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#trial" class="btn btn-primary">Start 14-Day Free Trial →</a>
+                        <a href="#contact" class="btn btn-secondary">Book Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-brand">
+                    <h3><span class="logo-green">GREEN</span><span class="logo-black">KPI</span></h3>
+                    <p>Enterprise sustainability management platform designed by sustainability practitioners for measurable business results. Trusted by leading organisations and consultancies worldwide.</p>
+                </section>
+                <section class="footer-section">
+                    <h3>Platform</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#features">Software Features</a></li>
+                            <li><a href="#demo">Data Integrations</a></li>
+                            <li><a href="#security">Security & Privacy</a></li>
+                            <li><a href="#api">API Documentation</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Solutions</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="greenkpi_enterprise.html">Enterprise Organisations</a></li>
+                            <li><a href="greenkpi_consultancy.html">Sustainability Consultancies</a></li>
+                            <li><a href="#register">Consultant Registration</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Support</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#help">Help Centre</a></li>
+                            <li><a href="#training">Platform Training</a></li>
+                            <li><a href="#contact">Contact Support</a></li>
+                            <li><a href="#status">System Status</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenKPI. All rights reserved. Building sustainable futures through measurable action.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    button.classList.add('active');
+                    const tabId = button.getAttribute('data-tab') + '-tab';
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+
+            // Navigation scroll effect
+            const nav = document.querySelector('.nav');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    nav.style.boxShadow = '0 4px 12px rgba(6, 6, 6, 0.08)';
+                } else {
+                    nav.style.boxShadow = '0 2px 8px rgba(6, 6, 6, 0.04)';
+                }
+            });
+
+            // Entrance animations
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.feature-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>

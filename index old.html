@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenKPI | Enterprise Sustainability Management Platform Australia</title>
+    <meta name="description" content="Transform sustainability performance with GreenKPI's enterprise platform. Designed for Australian consultancies and organisations to drive measurable ROI through employee engagement, automated reporting, and proven sustainability actions.">
+    <meta name="keywords" content="sustainability management platform, enterprise sustainability software, sustainability consultancy Australia, ESG reporting, sustainability KPIs, employee engagement sustainability, carbon footprint tracking, sustainability ROI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #1B9D1D;
+            --forest-green: #2D5016;
+            --sage-green: #87A96B;
+            --deep-teal: #4A8B8C;
+            --terracotta: #C4704E;
+            --bright-yellow: #FACC15;
+            --pure-white: #FFFFFF;
+            --cream: #F7E8D3;
+            --soft-grey: #F5F5F5;
+            --deep-black: #060606;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 100%; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--deep-black); background: var(--pure-white); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 1.5rem; }
+        .skip-link { position: absolute; top: -100px; left: -100px; background: var(--deep-black); color: var(--pure-white); padding: 8px; text-decoration: none; z-index: 1001; border-radius: 4px; opacity: 0; }
+        .skip-link:focus { top: 6px; left: 6px; opacity: 1; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+        .nav { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(45, 80, 22, 0.1); position: sticky; top: 0; z-index: 1000; transition: all 0.3s ease; }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; }
+        .logo-container { display: flex; align-items: center; gap: 0.75rem; }
+        .logo { font-size: 1.75rem; font-weight: 700; color: var(--primary-green); letter-spacing: -0.5px; }
+        .logo-tagline { font-size: 0.75rem; color: var(--forest-green); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-family: 'DM Sans', sans-serif; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--forest-green); font-weight: 500; font-size: 0.9375rem; transition: all 0.3s ease; position: relative; }
+        .nav-links a:hover { color: var(--primary-green); }
+        .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--primary-green); transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta { background: linear-gradient(135deg, var(--primary-green) 0%, var(--deep-teal) 100%); color: var(--pure-white); padding: 0.875rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 0.875rem; transition: all 0.3s ease; box-shadow: 0 0.25rem 0.75rem rgba(27, 157, 29, 0.25); }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 0.5rem 1.5625rem rgba(27, 157, 29, 0.35); }
+
+        .hero { background: linear-gradient(135deg, var(--pure-white) 0%, var(--cream) 100%); color: var(--deep-black); padding: 8rem 0 6rem; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hero-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(45,80,22,0.06)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23hero-grid)"/></svg>') repeat; opacity: 0.6; }
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; text-align: center; }
+        .hero-badge { background: rgba(45, 80, 22, 0.08); border: 1px solid rgba(45, 80, 22, 0.15); color: var(--forest-green); padding: 0.5rem 1.25rem; border-radius: 50px; font-size: 0.8125rem; font-weight: 600; display: inline-block; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -1px; color: var(--deep-black); }
+        .hero-subtitle { font-size: 1.25rem; margin-bottom: 3rem; color: var(--deep-black); line-height: 1.5; font-weight: 400; opacity: 0.8; }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin: 4rem 0; padding: 3rem 0; border-top: 1px solid rgba(45, 80, 22, 0.12); border-bottom: 1px solid rgba(45, 80, 22, 0.12); }
+        .hero-stat { text-align: center; }
+        .hero-stat-number { font-size: 3rem; font-weight: 700; color: var(--primary-green); margin-bottom: 0.5rem; line-height: 1; }
+        .hero-stat-label { font-size: 0.875rem; color: var(--forest-green); text-transform: uppercase; letter-spacing: 1px; font-weight: 500; font-family: 'DM Sans', sans-serif; }
+        .hero-cta-group { display: flex; gap: 1.5rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap; }
+
+        .btn { padding: 1rem 2rem; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease; cursor: pointer; border: none; min-width: 180px; justify-content: center; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary-green) 0%, var(--deep-teal) 100%); color: var(--pure-white); box-shadow: 0 0.5rem 2rem rgba(27, 157, 29, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 0.75rem 2.5rem rgba(27, 157, 29, 0.4); }
+        .btn-secondary { background: var(--pure-white); color: var(--forest-green); border: 2px solid var(--forest-green); box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.08); }
+        .btn-secondary:hover { background: var(--forest-green); color: var(--pure-white); transform: translateY(-2px); }
+
+        .solutions { padding: 8rem 0; background: var(--soft-grey); }
+        .section-header { text-align: center; margin-bottom: 5rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section-badge { background: rgba(45, 80, 22, 0.08); color: var(--forest-green); padding: 0.375rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; }
+        .section-title { font-size: 2.625rem; color: var(--deep-black); margin-bottom: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.5px; }
+        .section-subtitle { font-size: 1.125rem; color: var(--deep-black); line-height: 1.6; font-weight: 400; opacity: 0.8; }
+        .solutions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 5rem; }
+
+        .solution-card { background: var(--pure-white); padding: 3rem; border-radius: 1rem; box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.08); border: 1px solid rgba(45, 80, 22, 0.08); transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .solution-card:hover { transform: translateY(-0.5rem); box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+        .solution-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary-green), var(--deep-teal)); }
+        .solution-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+        .solution-icon { width: 64px; height: 64px; background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%); border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 0.5rem 1.5rem rgba(45, 80, 22, 0.25); }
+        .solution-meta { flex: 1; }
+        .solution-title { font-size: 1.5rem; color: var(--deep-black); margin-bottom: 0.5rem; font-weight: 700; }
+        .solution-type { font-size: 0.8125rem; color: var(--deep-teal); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; font-family: 'DM Sans', sans-serif; }
+        .solution-description { color: var(--deep-black); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; opacity: 0.8; }
+        .solution-features { list-style: none; margin-bottom: 2.5rem; }
+        .solution-features li { padding: 0.75rem 0; position: relative; padding-left: 1.75rem; color: var(--deep-black); font-size: 0.9375rem; border-bottom: 1px solid var(--cream); opacity: 0.8; }
+        .solution-features li:last-child { border-bottom: none; }
+        .solution-features li::before { content: ''; position: absolute; left: 0; top: 1.125rem; width: 6px; height: 6px; background: var(--primary-green); border-radius: 50%; }
+        .solution-metrics { background: var(--cream); padding: 1.5rem; border-radius: 0.75rem; margin-bottom: 2rem; }
+        .solution-metrics h4 { color: var(--forest-green); font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; }
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .metric { text-align: center; }
+        .metric-value { font-size: 1.25rem; font-weight: 700; color: var(--primary-green); margin-bottom: 0.25rem; }
+        .metric-label { font-size: 0.75rem; color: var(--forest-green); text-transform: uppercase; letter-spacing: 0.5px; font-family: 'DM Sans', sans-serif; }
+
+        .process { padding: 8rem 0; background: var(--pure-white); }
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 5rem; }
+        .process-step { text-align: center; position: relative; }
+        .process-step::after { content: ''; position: absolute; top: 2rem; left: calc(100% - 1.5rem); width: 3rem; height: 2px; background: linear-gradient(90deg, var(--sage-green), transparent); z-index: 1; }
+        .process-step:last-child::after { display: none; }
+        .process-number { width: 64px; height: 64px; background: linear-gradient(135deg, var(--forest-green) 0%, var(--primary-green) 100%); color: var(--pure-white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; margin: 0 auto 1.5rem; position: relative; z-index: 2; border: 4px solid var(--pure-white); box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12); }
+        .process-title { font-size: 1.25rem; color: var(--deep-black); margin-bottom: 1rem; font-weight: 700; }
+        .process-description { color: var(--deep-black); font-size: 0.9375rem; line-height: 1.6; opacity: 0.8; }
+
+        .platform-features { padding: 8rem 0; background: linear-gradient(135deg, var(--soft-grey) 0%, var(--cream) 100%); }
+        .features-content { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+        .features-text h2 { font-size: 2.25rem; color: var(--deep-black); margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2; }
+        .features-text p { color: var(--deep-black); font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; opacity: 0.8; }
+        .features-list { list-style: none; display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 0; }
+        .features-list li { padding: 1rem; background: var(--pure-white); border-radius: 0.5rem; color: var(--deep-black); font-size: 0.875rem; font-weight: 500; box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.04); position: relative; padding-left: 3rem; }
+        .features-list li::before { content: ''; position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background: var(--primary-green); border-radius: 50%; }
+        .features-list li::after { content: '✓'; position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--pure-white); font-size: 0.625rem; font-weight: bold; }
+
+        .cta-section { background: var(--pure-white); color: var(--deep-black); padding: 8rem 0; text-align: center; position: relative; overflow: hidden; border: 1px solid rgba(45, 80, 22, 0.15); box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.08); margin: 2rem 0; border-radius: 1rem; }
+        .cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 20%, rgba(27, 157, 29, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(74, 139, 140, 0.03) 0%, transparent 50%); pointer-events: none; }
+        .cta-content { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+        .cta-title { font-size: 2.625rem; margin-bottom: 1.5rem; font-weight: 700; line-height: 1.2; color: var(--deep-black); }
+        .cta-subtitle { font-size: 1.125rem; opacity: 0.8; margin-bottom: 3rem; color: var(--deep-black); }
+        .cta-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 4rem 0; }
+        .cta-option { background: rgba(247, 232, 211, 0.3); padding: 2.5rem 2rem; border-radius: 1rem; border: 1px solid rgba(45, 80, 22, 0.1); transition: all 0.3s ease; position: relative; }
+        .cta-option:hover { background: rgba(247, 232, 211, 0.5); transform: translateY(-0.25rem); box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.12); }
+        .cta-option h3 { color: var(--forest-green); margin-bottom: 1rem; font-size: 1.25rem; font-weight: 700; }
+        .cta-option p { opacity: 0.8; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.9375rem; color: var(--deep-black); }
+        .cta-option .btn { width: 100%; }
+
+        .consultant-cta { background: var(--cream); padding: 5rem 0; text-align: center; border-top: 1px solid rgba(45, 80, 22, 0.1); }
+        .consultant-content { max-width: 600px; margin: 0 auto; }
+        .consultant-content h2 { font-size: 1.5rem; color: var(--forest-green); margin-bottom: 1rem; font-weight: 700; }
+        .consultant-content p { color: var(--deep-black); font-size: 1rem; margin-bottom: 2rem; line-height: 1.6; opacity: 0.8; }
+        .consultant-content .btn { background: var(--pure-white); color: var(--forest-green); border: 2px solid var(--forest-green); }
+        .consultant-content .btn:hover { background: var(--forest-green); color: var(--pure-white); }
+
+        .footer { background: var(--deep-black); color: var(--cream); padding: 5rem 0 2.5rem; }
+        .footer-content { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.75rem; margin-bottom: 3rem; }
+        .footer-brand h3 { color: var(--primary-green); font-size: 1.5rem; margin-bottom: 1rem; font-weight: 700; }
+        .footer-brand p { line-height: 1.6; margin-bottom: 1.5rem; opacity: 0.8; }
+        .footer-section h3 { color: var(--pure-white); margin-bottom: 1.5rem; font-size: 1rem; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 0.75rem; }
+        .footer-section ul li a { color: var(--cream); text-decoration: none; transition: color 0.3s ease; font-size: 0.875rem; }
+        .footer-section ul li a:hover { color: var(--primary-green); }
+        .footer-bottom { border-top: 1px solid rgba(45, 80, 22, 0.3); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .footer-bottom p { opacity: 0.7; font-size: 0.875rem; }
+
+        .nav-links a:focus, .nav-cta:focus, .btn:focus, .solution-card:focus { outline: 3px solid var(--primary-green); outline-offset: 2px; }
+
+        @media (prefers-contrast: high) { :root { --primary-green: #2DB83D; --forest-green: #4A6B2F; } }
+        @media (max-width: 1024px) { .solutions-grid, .features-content { grid-template-columns: 1fr; gap: 3rem; } .hero h1 { font-size: 3rem; } .section-title { font-size: 2.25rem; } .hero-stats { grid-template-columns: 1fr; gap: 2rem; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero { padding: 5rem 0 4rem; } .hero h1 { font-size: 2.5rem; } .hero-subtitle { font-size: 1.125rem; } .hero-cta-group { flex-direction: column; align-items: center; } .btn { width: 100%; max-width: 300px; } .process-grid { grid-template-columns: 1fr; } .process-step::after { display: none; } .section-title { font-size: 2rem; } .solution-card { padding: 2rem; } .footer-content { grid-template-columns: 1fr; gap: 2.5rem; } .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; } .cta-title { font-size: 2rem; } }
+        @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo-container">
+                        <div class="logo" role="img" aria-label="GreenKPI Logo">GREENKPI</div>
+                        <div class="logo-tagline">Sustainability in Action</div>
+                    </div>
+                     <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="greenkpi_about.html">About</a></li>
+    <li><a href="greenkpi_article.html">Articles</a></li>
+    <li><a href="greenkpi_consultancy.html">Consultancy</a></li>
+    <li><a href="greenkpi_enterprise.html">Enterprise</a></li>
+    <li><a href="greenkpi_pricing.html">Pricing</a></li>
+    <li><a href="greenkpi_software.html">Software</a></li>
+    <li><a href="greenkpi_whitepaper.html">Whitepaper</a></li>
+    <li><a href="greenkpi_consultancy_onepager.html">ConsultOne</a></li>
+    <li><a href="greenkpi_enterprise_one-pager.html">EntOne</a></li>
+                    </ul>
+                    <a href="#demo" class="nav-cta">Request Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">Sustainability Pays</div>
+                    <h1 id="hero-heading">Transform Sustainability Performance at Enterprise Scale</h1>
+                    <p class="hero-subtitle">Empower teams to drive measurable sustainability outcomes with quantifiable ROI across consultancies and organisations</p>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">2-3 year</div>
+                            <div class="hero-stat-label">average ROI payback period</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">22%</div>
+                            <div class="hero-stat-label">Consultancy Efficiency Gains</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number">16%</div>
+                            <div class="hero-stat-label">Employee Sustainability Engagement</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta-group">
+                        <a href="#demo" class="btn btn-primary">Request Demo <span>→</span></a>
+                        <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solutions" id="solutions">
+            <div class="container">
+                <header class="section-header">
+                    <div class="section-badge">Sustainability at Work</div>
+                    <h2 class="section-title">Built for Scale, Designed for Results</h2>
+                    <p class="section-subtitle">Whether you're managing sustainability in-house or scaling consultancy services, GreenKPI delivers enterprise-grade capabilities with measurable business outcomes</p>
+                </header>
+
+                <div class="solutions-grid">
+                    <article class="solution-card">
+                        <header class="solution-header">
+                            <div class="solution-icon">
+                                <svg width="32" height="32" viewBox="0 0 100 100" fill="none">
+                                    <circle cx="50" cy="50" r="15" fill="white" stroke="currentColor" stroke-width="3"/>
+                                    <circle cx="30" cy="20" r="8" fill="white" opacity="0.8"/>
+                                    <circle cx="70" cy="20" r="8" fill="white" opacity="0.8"/>
+                                    <circle cx="85" cy="50" r="8" fill="white" opacity="0.8"/>
+                                    <circle cx="70" cy="80" r="8" fill="white" opacity="0.8"/>
+                                    <circle cx="30" cy="80" r="8" fill="white" opacity="0.8"/>
+                                    <circle cx="15" cy="50" r="8" fill="white" opacity="0.8"/>
+                                    <line x1="50" y1="50" x2="30" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="50" x2="70" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="50" x2="85" y2="50" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="50" x2="70" y2="80" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="50" x2="30" y2="80" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="50" x2="15" y2="50" stroke="white" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="solution-meta">
+                                <h3 class="solution-title">Enterprise Organisations</h3>
+                                <div class="solution-type">Direct Implementation</div>
+                            </div>
+                        </header>
+                        
+                        <p class="solution-description">Comprehensive sustainability management for organisations. Drive organisation-wide engagement from C-suite to frontline employees with proven ROI outcomes.</p>
+                        
+                        <ul class="solution-features">
+                            <li>Enterprise-wide employee engagement platform</li>
+                            <li>Automated sustainability reporting and compliance</li>
+                            <li>Real-time metrics and cost reduction tracking</li>
+                            <li>Multi-location management capabilities</li>
+                            <li>Risk reduction and ESG compliance reporting</li>
+                            <li>Free access for GreenKPI registered sustainability consultants</li>
+                        </ul>
+
+                        <aside class="solution-metrics">
+                            <h4>Drive Change Faster</h4>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value">40%</div>
+                                    <div class="metric-label">Faster Implementation</div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <a href="#organisation-demo" class="btn btn-primary">View Enterprise Solutions <span>→</span></a>
+                    </article>
+
+                    <article class="solution-card">
+                        <header class="solution-header">
+                            <div class="solution-icon">
+                                <svg width="32" height="32" viewBox="0 0 120 100" fill="none">
+                                    <rect x="45" y="35" width="30" height="30" rx="8" fill="white" stroke="currentColor" stroke-width="3"/>
+                                    <text x="60" y="55" fill="currentColor" font-size="8" text-anchor="middle">HUB</text>
+                                    <rect x="10" y="10" width="20" height="15" rx="3" fill="white" opacity="0.8"/>
+                                    <rect x="90" y="10" width="20" height="15" rx="3" fill="white" opacity="0.8"/>
+                                    <rect x="10" y="75" width="20" height="15" rx="3" fill="white" opacity="0.8"/>
+                                    <rect x="90" y="75" width="20" height="15" rx="3" fill="white" opacity="0.8"/>
+                                    <rect x="45" y="5" width="20" height="15" rx="3" fill="white" opacity="0.8"/>
+                                    <line x1="45" y1="45" x2="30" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="65" y1="45" x2="90" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="50" y1="35" x2="55" y2="20" stroke="white" stroke-width="2"/>
+                                    <line x1="45" y1="55" x2="30" y2="80" stroke="white" stroke-width="2"/>
+                                    <line x1="65" y1="55" x2="90" y2="80" stroke="white" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="solution-meta">
+                                <h3 class="solution-title">Sustainability Consultancies</h3>
+                                <div class="solution-type">Multi-Client Management</div>
+                            </div>
+                        </header>
+                        
+                        <p class="solution-description">Scale consultancy operations with centralised multi-client management while delivering enhanced value and achieving measurable operational efficiencies.</p>
+                        
+                        <ul class="solution-features">
+                            <li>Centralised multi-client management dashboard</li>
+                            <li>Streamlined client setup and onboarding workflows</li>
+                            <li>Consultancy-to-client delegation and collaboration tools</li>
+                            <li>White-label branding and customisation options</li>
+                            <li>Volume-based pricing discounts for growth</li>
+                            <li>Single unified account for operational simplicity</li>
+                        </ul>
+
+                        <aside class="solution-metrics">
+                            <h4>Business Impact</h4>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <div class="metric-value">22%</div>
+                                    <div class="metric-label">Efficiency Gains</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">35%</div>
+                                    <div class="metric-label">Client Growth Potential</div>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <a href="#consultancy-demo" class="btn btn-primary">View Consultancy Solutions <span>→</span></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="platform">
+            <div class="container">
+                <header class="section-header">
+                    <div class="section-badge">GreenKPI's Methodology</div>
+                    <h2 class="section-title">3 Phase Implementation Approach</h2>
+                    <p class="section-subtitle">Our proven methodology ensures rapid deployment with measurable results from day one, designed by sustainability practitioners for real-world success</p>
+                </header>
+
+                <div class="process-grid">
+                    <article class="process-step">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Engage & Execute</h3>
+                        <p class="process-description">Enterprise-wide employee activation with project-managed sustainability actions. Deploy hundreds of pre-loaded sustainability actions and unlimited custom actions, assignable across multi-location operations with full workflow management.</p>
+                    </article>
+
+                    <article class="process-step">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Measure & Scale</h3>
+                        <p class="process-description">Real-time performance tracking across departments, locations, and business units. Interactive dashboards provide analytics for continuous improvement with proven ROI measurement capabilities and automated data capture.</p>
+                    </article>
+
+                    <article class="process-step">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Report & Grow</h3>
+                        <p class="process-description">Automated reports share your sustainability success story with multiple stakeholder types. Interactive transparency features build brand trust while maintaining compliance readiness and supporting business growth through demonstrated impact.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="platform-features">
+            <div class="container">
+                <div class="features-content">
+                    <article class="features-text">
+                        <div class="section-badge">Sustainability Made Simple</div>
+                        <h2>Built for Complexity, Designed for Simplicity</h2>
+                        <p>GreenKPI delivers enterprise-grade capabilities while maintaining the intuitive user experience that drives employee engagement. Our platform scales from smaller enterprises with single locations to multinational global operations with unified reporting and measurable business outcomes.</p>
+                        
+                        <div class="hero-cta-group" style="justify-content: flex-start; margin-top: 2rem;">
+                            <a href="#demo" class="btn btn-primary">Schedule Enterprise Demo <span>→</span></a>
+                        </div>
+                    </article>
+                    
+                    <aside class="features-list-container">
+                        <ul class="features-list">
+                            <li>Multi-tenant architecture with role-based access control</li>
+                            <li>Advanced analytics and interactive real-time dashboards</li>
+                            <li>Automated compliance and ESG reporting capabilities</li>
+                            <li>Global deployment with local customisation options</li>
+                            <li>Dedicated account management and ongoing support</li>
+                            <li>Cultural change management and training resources</li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" id="demo">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to Transform Your Sustainability Performance?</h2>
+                    <p class="cta-subtitle">Join leading Australian enterprises and consultancies leveraging GreenKPI to drive measurable change and quantifiable business value</p>
+                    
+                    <div class="cta-options">
+                        <article class="cta-option">
+                            <h3>Enterprise Organisations</h3>
+                            <p>Comprehensive sustainability management with enterprise-wide employee engagement and measurable ROI outcomes for Australian organisations</p>
+                            <a href="#organisation-demo" class="btn btn-primary">View Enterprise Solutions <span>→</span></a>
+                        </article>
+                        <article class="cta-option">
+                            <h3>Sustainability Consultancies</h3>
+                            <p>Scale operations with multi-client management while enhancing service delivery and operational efficiency across your consultancy practice</p>
+                            <a href="#consultancy-demo" class="btn btn-primary">View Consultancy Solutions <span>→</span></a>
+                        </article>
+                        <article class="cta-option">
+                            <h3>Sustainability Consultants</h3>
+                            <p>Register with GreenKPI for enhanced client services and receive complimentary platform access for approved sustainability professionals</p>
+                            <a href="#consultant-registration" class="btn btn-primary">Register as Consultant <span>→</span></a>
+                        </article>
+                        <article class="cta-option">
+                            <h3>Enterprise Demo</h3>
+                            <p>See GreenKPI in action with a personalised demonstration tailored to your specific organisational requirements and sustainability goals</p>
+                            <a href="#book-demo" class="btn btn-primary">Book Live Demo <span>→</span></a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="consultant-cta">
+            <div class="container">
+                <div class="consultant-content">
+                    <h2>Are you a sustainability consultant?</h2>
+                    <p>Register with GreenKPI to enhance your client services and receive complimentary platform access for approved sustainability professionals. Join our network of certified practitioners across Australia.</p>
+                    <a href="#consultant-registration" class="btn">Register as Consultant <span>→</span></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <section class="footer-brand">
+                    <h3>GREENKPI</h3>
+                    <p>Enterprise sustainability management platform designed by sustainability practitioners for measurable business results. Trusted by leading organisations and consultancies across Australia and globally.</p>
+                </section>
+                <section class="footer-section">
+                    <h3>Solutions</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#organisation-demo">Enterprise Organisations</a></li>
+                            <li><a href="#consultancy-demo">Sustainability Consultancies</a></li>
+                            <li><a href="#platform">Platform Features</a></li>
+                            <li><a href="#consultant-registration">Consultant Registration</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Company</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#about">About GreenKPI</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#support">Customer Support</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="footer-section">
+                    <h3>Legal</h3>
+                    <nav>
+                        <ul>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                            <li><a href="#security">Security & Compliance</a></li>
+                            <li><a href="#accessibility">Accessibility</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenKPI. All rights reserved.</p>
+                <p>Building sustainable futures through measurable action</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        if (target.id === 'main-content') {
+                            target.setAttribute('tabindex', '-1');
+                            target.focus();
+                        }
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('.nav');
+                if (window.scrollY > 50) {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.borderBottom = '1px solid rgba(45, 80, 22, 0.2)';
+                    nav.style.boxShadow = '0 0.25rem 1rem rgba(0, 0, 0, 0.08)';
+                } else {
+                    nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.borderBottom = '1px solid rgba(45, 80, 22, 0.1)';
+                    nav.style.boxShadow = 'none';
+                }
+            });
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (!prefersReducedMotion) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+                document.querySelectorAll('.solution-card, .process-step, .cta-option').forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                    observer.observe(el);
+                });
+            }
+
+            document.querySelectorAll('.btn').forEach(btn => {
+                ['mouseenter', 'focus'].forEach(event => {
+                    btn.addEventListener(event, () => btn.style.transform = 'translateY(-2px)');
+                });
+                ['mouseleave', 'blur'].forEach(event => {
+                    btn.addEventListener(event, () => btn.style.transform = 'translateY(0)');
+                });
+            });
+
+            const animateStats = () => {
+                if (prefersReducedMotion) return;
+                document.querySelectorAll('.hero-stat-number').forEach(stat => {
+                    const text = stat.textContent;
+                    if (text.includes('%')) {
+                        const number = parseInt(text);
+                        let current = 0;
+                        const increment = number / 30;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= number) {
+                                stat.textContent = text;
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(current) + '%';
+                            }
+                        }, 50);
+                    }
+                });
+            };
+
+            const heroObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(animateStats, 500);
+                        heroObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const heroStats = document.querySelector('.hero-stats');
+            if (heroStats) heroObserver.observe(heroStats);
+        });
+    </script>
+</body>
+</html>15%</div>
+                                    <div class="metric-label">Operational Improvements</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">
