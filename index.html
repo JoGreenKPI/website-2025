@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html lang="en-AU">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GreenKPI | Enterprise Sustainability Management Platform Australia</title>
     <meta name="description" content="Transform sustainability performance with GreenKPI's enterprise platform. Designed for Australian consultancies and organisations to drive measurable ROI through employee engagement, automated reporting, and proven sustainability actions.">
+    <meta name="keywords" content="sustainability, enterprise, management, platform, Australia, consultancies, organisations, ESG, reporting, employee engagement, ROI, GreenKPI">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
     <style>
         :root {
+            --primary-green: #1B9D1D;
+        }
+        .arrow {
+            font-weight: bold;
+            margin-left: 0.25em;
+        }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0,0,0,0);
+            border: 0;
+        }
+        .skip-link:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            margin: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-green);
+            color: var(--pure-white);
+            border-radius: 0.5rem;
+            z-index: 10000;
+            clip: auto;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
             --primary-green: #1B9D1D;
             --forest-green: #2D5016;
             --sage-green: #87A96B;
@@ -529,15 +560,16 @@
             } 
         }
     </style>
-</head>
 <body>
-    <header>
-        <nav class="nav" role="navigation">
+    <a href="#main-content" class="skip-link sr-only" tabindex="0">Skip to main content</a>
+    <main id="main-content">
+        <nav class="nav" role="navigation" aria-label="Main Navigation">
             <div class="container">
                 <div class="nav-content">
-                    <div class="logo">
+                    <div class="logo" aria-label="GreenKPI Home">
                         <span class="logo-green">GREEN</span><span class="logo-black">KPI</span>
                     </div>
+                    <ul class="nav-links">
                     <ul class="nav-links">
                <li><a href="index.html">Home</a></li>
     <li><a href="greenkpi_software.html">Platform</a></li>
@@ -554,15 +586,11 @@
                     <a href="#demo" class="nav-cta">Request Demo</a>
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge">Enterprise Sustainability Management</div>
-                    <h1>Transform Sustainability Performance at Enterprise Scale</h1>
+                    <h1 id="hero-heading">Transform Sustainability Performance at Enterprise Scale</h1>
                     <p class="hero-subtitle">Empower teams to drive measurable sustainability outcomes with quantifiable ROI across consultancies and organisations</p>
                     
                     <div class="hero-stats">
@@ -579,9 +607,13 @@
                             <div class="hero-stat-label">Water Savings Achieved</div>
                         </div>
                     </div>
+                            <div class="hero-stat-number">20-50%</div>
+                            <div class="hero-stat-label">Water Savings Achieved</div>
+                        </div>
+                    </div>
 
                     <div class="hero-cta-group">
-                        <a href="#demo" class="btn btn-primary">Request Demo →</a>
+                        <a href="#demo" class="btn btn-primary">Request Demo <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                         <a href="#solutions" class="btn btn-secondary">Learn More</a>
                     </div>
                 </div>
@@ -613,7 +645,7 @@
                             <li>Risk reduction and ESG compliance reporting</li>
                         </ul>
 
-                        <a href="#demo" class="btn btn-primary">View Enterprise Solutions →</a>
+                        <a href="#demo" class="btn btn-primary">View Enterprise Solutions <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                     </article>
 
                     <article class="solution-card">
@@ -632,7 +664,7 @@
                             <li>Volume-based pricing discounts</li>
                         </ul>
 
-                        <a href="#demo" class="btn btn-primary">View Consultancy Solutions →</a>
+                        <a href="#demo" class="btn btn-primary">View Consultancy Solutions <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                     </article>
                 </div>
             </div>
@@ -676,7 +708,7 @@
                         <h2>Built for Complexity, Designed for Simplicity</h2>
                         <p>GreenKPI delivers enterprise-grade capabilities whilst maintaining the intuitive user experience that drives employee engagement. Our platform scales from single locations to multinational operations with unified reporting and measurable business outcomes.</p>
                         
-                        <a href="#demo" class="btn btn-primary">Schedule Enterprise Demo →</a>
+                        <a href="#demo" class="btn btn-primary">Schedule Enterprise Demo <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                     </article>
                     
                     <aside>
@@ -703,7 +735,7 @@
                         <article class="cta-option">
                             <h3>Enterprise Organisations</h3>
                             <p>Comprehensive sustainability management with enterprise-wide employee engagement and measurable ROI outcomes</p>
-                            <a href="#" class="btn btn-primary">View Solutions →</a>
+                            <a href="#" class="btn btn-primary">View Solutions <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                         </article>
                         <article class="cta-option">
                             <h3>Sustainability Consultancies</h3>
@@ -713,12 +745,12 @@
                         <article class="cta-option">
                             <h3>Sustainability Consultants</h3>
                             <p>Register with GreenKPI for enhanced client services and receive complimentary platform access</p>
-                            <a href="#" class="btn btn-primary">Register Now →</a>
+                            <a href="#" class="btn btn-primary">Register Now <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                         </article>
                         <article class="cta-option">
                             <h3>Book a Demo</h3>
                             <p>See GreenKPI in action with a personalised demonstration tailored to your requirements</p>
-                            <a href="#" class="btn btn-primary">Schedule Demo →</a>
+                            <a href="#" class="btn btn-primary">Schedule Demo <span aria-hidden="true" class="arrow">→</span><span class="sr-only"> (arrow)</span></a>
                         </article>
                     </div>
                 </div>
